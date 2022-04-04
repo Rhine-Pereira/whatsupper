@@ -1,0 +1,31 @@
+{
+    "name": "Auto Cap",
+    "description": "Auto capitalize Whatsapp",
+    "version": "1.0",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhu4GbX2wqMlqf7PtLh7DQBjKhhM11HfSOmy2eQ40cft99qVkBHixAkiGNuLFIaKsGTFMmw2iTkZWKzUDWaYeZ21Yh4jnvRED/S+Ij0EtbR7PNKjYH/3fDevkBdnvXocR0/BdwRLnE15KJ1v/sxCDZRGRxroT1jEqge8NXvQlZLt4dWDZctn5J5WpeUdTX4rFONbfTcqZFkBm7N2xUyEWzunIwdk18ril7Hf+tbytQP8VALjElDIu+QwHE8O2w7E6h1BXa5/h9ySPF49fMPu6pC7KgKVjcTu7GsmZ9IJ+2LTiKsdaa9tZxCuFcEc5/WZeZQCi9krXm4YzQsoKXx+7swIDAQAB",
+    "manifest_version": 2,
+
+    "background": {
+        "persistent": true,
+        "scripts": [ "js/background.js" ]
+
+    },
+
+    "content_scripts": [ {
+        "js": [ "js/content.js" ],
+        "matches": [ "https://web.whatsapp.com/*" ],
+        "run_at": "document_idle"
+    } ],
+
+    "page_action": {
+        "default_icon": {
+            "128": "images/icon-128.png",
+            "16": "images/icon-16.png",
+            "48": "images/icon-48.png"
+         },
+        "default_popup": "popup.html"
+      },
+
+    "permissions": [ "storage" ]
+  
+}
